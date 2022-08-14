@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"os"
 
 	"github.com/gin-gonic/gin"
 	"github.com/gocolly/colly"
@@ -89,7 +90,8 @@ func bootstrap_api() {
 	router := gin.Default()
 	router.GET("/available_seasons", retrieve_available_seasons)
 	router.GET("/:season", retrieve_classification_table)
-	router.Run("localhost:8080")
+	port := os.Getenv("PORT")
+	router.Run(":" + port)
 	log.Println("Started to listen on localhost:8080")
 }
 
