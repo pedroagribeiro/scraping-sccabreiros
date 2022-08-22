@@ -41,6 +41,9 @@ func get_available_seasons() []string {
 func perform_scraping_on_zerozero(url string) []table_line {
 	classification := []table_line{}
 	c := colly.NewCollector()
+	c.OnRequest(func(r *colly.Request) {
+		r.ResponseCharacterEncoding = "windows-1252"
+	})
 	c.OnHTML("div[id=edition_table].box_container tbody tr", func(h *colly.HTMLElement) {
 		line := table_line{}
 		h.ForEach("td", func(order int, el *colly.HTMLElement) {
