@@ -16,6 +16,7 @@ var (
 		"2019.2020": "https://www.zerozero.pt/edition.php?id_edicao=136037",
 		"2020.2021": "https://www.zerozero.pt/edition.php?id_edicao=148340",
 		"2021.2022": "https://www.zerozero.pt/edition.php?id_edicao=157056",
+		"2022.2023": "https://www.zerozero.pt/edition.php?id_edicao=166684",
 	}
 )
 
