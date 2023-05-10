@@ -11,25 +11,26 @@ import (
 
 var (
 	supported_seasons = map[string]string{
-		"2017.2018": "https://www.zerozero.pt/edition.php?id_edicao=111450",
-		"2018.2019": "https://www.zerozero.pt/edition.php?id_edicao=125348",
-		"2019.2020": "https://www.zerozero.pt/edition.php?id_edicao=136037",
-		"2020.2021": "https://www.zerozero.pt/edition.php?id_edicao=148340",
-		"2021.2022": "https://www.zerozero.pt/edition.php?id_edicao=157056",
-		"2022.2023": "https://www.zerozero.pt/edition.php?id_edicao=166684",
+		"2017.2018":            "https://www.zerozero.pt/edition.php?id_edicao=111450",
+		"2018.2019":            "https://www.zerozero.pt/edition.php?id_edicao=125348",
+		"2019.2020":            "https://www.zerozero.pt/edition.php?id_edicao=136037",
+		"2020.2021":            "https://www.zerozero.pt/edition.php?id_edicao=148340",
+		"2021.2022":            "https://www.zerozero.pt/edition.php?id_edicao=157056",
+		"2022.2023":            "https://www.zerozero.pt/edition.php?id_edicao=166684",
+		"2022.2023.Relegation": "https://www.zerozero.pt/edition.php?id_edicao=173180",
 	}
 )
 
 type table_line struct {
-	Position	string	`json:"position"`
-	Team		string	`json:"team"`
-	Games		string	`json:"games"`
-	Victories	string 	`json:"victories"`
-	Draws		string 	`json:"draws"`
-	Defeats		string 	`json:"defeats"`
-	PlusMinus	string	`json:"plus_minus"`
-	Points		string	`json:"points"`
-} 
+	Position  string `json:"position"`
+	Team      string `json:"team"`
+	Games     string `json:"games"`
+	Victories string `json:"victories"`
+	Draws     string `json:"draws"`
+	Defeats   string `json:"defeats"`
+	PlusMinus string `json:"plus_minus"`
+	Points    string `json:"points"`
+}
 
 func get_available_seasons() []string {
 	keys := make([]string, 0, len(supported_seasons))
